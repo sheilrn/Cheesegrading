@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- password dulu -->
+    <nav class="navbar" data-bs-theme="dark">
+      <!-- Navbar content -->
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="img/Kraft_foods_logo2012.png" alt="Bootstrap" width="16%" />
+          <img src="img/mondlz.png" alt="Bootstrap" width="20%" />
+        </a>
+      </div>
+    </nav>
+    <!-- form overall-->
+    <section id="form">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col">
+            <h2>Cheese Grading</h2>
+          </div>
+        </div>
+        <!-- LAYOUT -->
+        <div class="row justify-content-center">
+          <div class="col-md-16">
+            <!-- nama -->
+            <form class="row g-2" method="post" action="https://script.google.com/macros/s/AKfycbxgOxVWT6BvA-evAWk9cQpE0AEH45Vcr7TDEhwUYDHlmfWOPdUm30xiGxJBAVSKCYbBHg/exec" name="contact-form">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" list="datalistOptions" name="Nama" id="nama" placeholder="Ketik untuk mencari..." autocomplete="name" required />
+                  <label for="nama">Nama</label>
+                  <datalist id="datalistOptions">
+                    <option value="Ilham"></option>
+                    <option value="Asih"></option>
+                    <option value="Ilahi"></option>
+                    <option value="Rani"></option>
+                    <option value="Agus"></option>
+                  </datalist>
+                  <div class="invalid-feedback">Wajib diisi.</div>
+                </div>
+              </div>
+              <!-- departemen -->
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" name="Departemen" id="department" required>
+                    <option selected disabled value>Choose...</option>
+                    <option value="MBD">MBD</option>
+                    <option value="QM">QM</option>
+                    <option value="RND">RND</option>
+                  </select>
+                  <div class="invalid-feedback">Required.</div>
+                  <label for="department">Departemen</label>
+                </div>
+              </div>
+              <!-- tanggal -->
+              <div class="col-md-6">
+                <label for="tanggalgrading" class="form-label">Tanggal Grading</label>
+                <input type="date" name="TanggalGrading" class="form-control" id="tanggalgrading" required />
+                <div class="invalid-feedback">Required.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="tanggalproduksi" class="form-label">Tanggal Produksi</label>
+                <input type="date" class="form-control" name="TanggalProduksi" id="tanggalproduksi" required />
+                <div class="invalid-feedback">Required.</div>
+              </div>
+              <!-- SKU1 -->
+              <div id="form1">
+                <div class="col-12">
+                  <label for="SKU" class="form-label">SKU 1</label>
+                  <select id="SKU" class="form-select" name="SKU1" required>
+                    <option value="" disabled selected>Choose...</option>
+                    <option value="FILLING CHEESE L4">FILLING CHEESE L4</option>
+                    <option value="KRAFT CHEDDAR 48X160 GR">KRAFT CHEDDAR 48X160 GR</option>
+                    <option value="SL EDEN 10 200G">SL EDEN 10 200G</option>
+                    <option value="LOAF L4">LOAF L4</option>
+                    <option value="SL 10 Reg">SL 10 Reg</option>
+                    <option value="AIO 160G L6 Hart">AIO 160G L6 Hart</option>
+                  </select>
+                  <div class="invalid-feedback">Required.</div>
+                </div>
+              </div>
+              <!-- GRADE 1 -->
+              <div id="form2" style="display: none">
+                <div class="container text-center"></div>
+                <div class="col table-responsive">
+                  <table class="table table-sm table-bordered border-lavender-web align-middle">
+                    <thead class="table table-active">
+                      <!-- Head -->
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Kode</th>
+                        <th scope="col">Jam</th>
+                        <th scope="col">Body</th>
+                        <th scope="col">Appearance</th>
+                        <th scope="col">Consistency</th>
+                        <th scope="col">Sliceability</th>
+                        <th scope="col">Grating/Melting</th>
+                        <th scope="col">Mouthfeel</th>
+                        <th scope="col">Flavor</th>
+                        <th scope="col">Saltiness</th>
+                        <th scope="col">Cheese Flavor</th>
+                        <th scope="col">General</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Remarks</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-group-divide">
+                      <tr>
+                        <!-- baris 1 -->
+                        <th scope="row">Begin</th>
+                        <td><input type="number" class="form-control" name="Kode" /></td>
+                        <td><input type="number" class="form-control" name="JamSKU" /></td>
+                        <td><input type="number" class="form-control" name="Body" required /></td>
+                        <td><input type="number" class="form-control" name="Appearance" required /></td>
+                        <td><input type="number" class="form-control" name="Consistency" required /></td>
+                        <td><input type="number" class="form-control" name="Sliceability" required /></td>
+                        <td><input type="number" class="form-control" name="GratingMelting" required /></td>
+                        <td><input type="number" class="form-control" name="Mouthfeel" required /></td>
+                        <td><input type="number" class="form-control" name="Flavor" required /></td>
+                        <td><input type="number" class="form-control" name="Saltiness" required /></td>
+                        <td><input type="number" class="form-control" name="CheeseFlavor" required /></td>
+                        <td><input type="number" class="form-control" name="General" required /></td>
+                        <td><input type="number" class="form-control" name="Color" required /></td>
+                        <td>
+                          <div>
+                            <textarea class="form-control" name="Remarks"></textarea>
+                          </div>
+                        </td>
+                      </tr>
+                      <!-- baris 2 -->
+                      <tr>
+                        <th scope="row">Mid</th>
+                        <td><input type="number" class="form-control" name="Kode" /></td>
+                        <td><input type="number" class="form-control" name="JamSKU" /></td>
+                        <td><input type="number" class="form-control" name="Body" required /></td>
+                        <td><input type="number" class="form-control" name="Appearance" required /></td>
+                        <td><input type="number" class="form-control" name="Consistency" required /></td>
+                        <td><input type="number" class="form-control" name="Sliceability" required /></td>
+                        <td><input type="number" class="form-control" name="GratingMelting" required /></td>
+                        <td><input type="number" class="form-control" name="Mouthfeel" required /></td>
+                        <td><input type="number" class="form-control" name="Flavor" required /></td>
+                        <td><input type="number" class="form-control" name="Saltiness" required /></td>
+                        <td><input type="number" class="form-control" name="CheeseFlavor" required /></td>
+                        <td><input type="number" class="form-control" name="General" required /></td>
+                        <td><input type="number" class="form-control" name="Color" required /></td>
+                        <td>
+                          <div>
+                            <textarea class="form-control" name="Remarks"></textarea>
+                          </div>
+                        </td>
+                      </tr>
+                      <!-- baris 3 -->
+                      <tr>
+                        <th scope="row">End</th>
+                        <td><input type="number" class="form-control" name="Kode" /></td>
+                        <td><input type="number" class="form-control" name="JamSKU" /></td>
+                        <td><input type="number" class="form-control" name="Body" required /></td>
+                        <td><input type="number" class="form-control" name="Appearance" required /></td>
+                        <td><input type="number" class="form-control" name="Consistency" required /></td>
+                        <td><input type="number" class="form-control" name="Sliceability" required /></td>
+                        <td><input type="number" class="form-control" name="GratingMelting" required /></td>
+                        <td><input type="number" class="form-control" name="Mouthfeel" required /></td>
+                        <td><input type="number" class="form-control" name="Flavor" required /></td>
+                        <td><input type="number" class="form-control" name="Saltiness" required /></td>
+                        <td><input type="number" class="form-control" name="CheeseFlavor" required /></td>
+                        <td><input type="number" class="form-control" name="General" required /></td>
+                        <td><input type="number" class="form-control" name="Color" required /></td>
+                        <td>
+                          <div>
+                            <textarea class="form-control" name="Remarks"></textarea>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- SKU2 -->
+              <div id="form3">
+                <div class="col-12">
+                  <label for="SKU2" class="form-label">SKU 2</label>
+                  <select id="SKU2" name="SKU" class="form-select">
+                    <option>Choose...</option>
+                    <option value="FILLING CHEESE L4">FILLING CHEESE L4</option>
+                    <option value="KRAFT CHEDDAR 48X160 GR">KRAFT CHEDDAR 48X160 GR</option>
+                    <option value="SL EDEN 10 200G">SL EDEN 10 200G</option>
+                    <option value="LOAF L4">LOAF L4</option>
+                    <option value="SL 10 Reg">SL 10 Reg</option>
+                    <option value="AIO 160G L6 Hart">AIO 160G L6 Hart</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Grade 2 -->
+              <div id="form4" style="display: none">
+                <div class="container text-center">
+                  <div class="col table-responsive">
+                    <table class="table table-sm table-bordered border-lavender-web align-middle">
+                      <thead class="table table-active">
+                        <!-- Head -->
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">Kode</th>
+                          <th scope="col">Jam</th>
+                          <th scope="col">Body</th>
+                          <th scope="col">Appearance</th>
+                          <th scope="col">Consistency</th>
+                          <th scope="col">Sliceability</th>
+                          <th scope="col">Grating/Melting</th>
+                          <th scope="col">Mouthfeel</th>
+                          <th scope="col">Flavor</th>
+                          <th scope="col">Saltiness</th>
+                          <th scope="col">Cheese Flavor</th>
+                          <th scope="col">General</th>
+                          <th scope="col">Color</th>
+                          <th scope="col">Remarks</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-group-divide">
+                        <tr>
+                          <!-- baris 1 -->
+                          <th scope="row">Begin</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- baris 2 -->
+                        <tr>
+                          <th scope="row">Mid</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- baris 3 -->
+                        <tr>
+                          <th scope="row">End</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- SKU3 -->
+              <div id="form5">
+                <div class="col-12">
+                  <label for="SKU3" class="form-label">SKU 3</label>
+                  <select id="SKU3" name="SKU" class="form-select">
+                    <option selected>Choose...</option>
+                    <option value="FILLING CHEESE L4">FILLING CHEESE L4</option>
+                    <option value="KRAFT CHEDDAR 48X160 GR">KRAFT CHEDDAR 48X160 GR</option>
+                    <option value="SL EDEN 10 200G">SL EDEN 10 200G</option>
+                    <option value="LOAF L4">LOAF L4</option>
+                    <option value="SL 10 Reg">SL 10 Reg</option>
+                    <option value="AIO 160G L6 Hart">AIO 160G L6 Hart</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Grade 3 -->
+              <div id="form6" style="display: none">
+                <div class="container text-center">
+                  <div class="col table-responsive">
+                    <table class="table table-sm table-bordered border-lavender-web align-middle">
+                      <thead class="table table-active" id="header">
+                        <!-- Head -->
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">Kode</th>
+                          <th scope="col">Jam</th>
+                          <th scope="col">Body</th>
+                          <th scope="col">Appearance</th>
+                          <th scope="col">Consistency</th>
+                          <th scope="col">Sliceability</th>
+                          <th scope="col">Grating/Melting</th>
+                          <th scope="col">Mouthfeel</th>
+                          <th scope="col">Flavor</th>
+                          <th scope="col">Saltiness</th>
+                          <th scope="col">Cheese Flavor</th>
+                          <th scope="col">General</th>
+                          <th scope="col">Color</th>
+                          <th scope="col">Remarks</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-group-divide">
+                        <tr>
+                          <!-- baris 1 -->
+                          <th scope="row">Begin</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- baris 2 -->
+                        <tr>
+                          <th scope="row">Mid</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- baris 3 -->
+                        <tr>
+                          <th scope="row">End</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- SKU4 -->
+              <div id="form7">
+                <div class="col-12">
+                  <label for="SKU4" class="form-label">SKU 4</label>
+                  <select id="SKU4" name="SKU" class="form-select">
+                    <option>Choose...</option>
+                    <option value="FILLING CHEESE L4">FILLING CHEESE L4</option>
+                    <option value="KRAFT CHEDDAR 48X160 GR">KRAFT CHEDDAR 48X160 GR</option>
+                    <option value="SL EDEN 10 200G">SL EDEN 10 200G</option>
+                    <option value="LOAF L4">LOAF L4</option>
+                    <option value="SL 10 Reg">SL 10 Reg</option>
+                    <option value="AIO 160G L6 Hart">AIO 160G L6 Hart</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Grade 4 -->
+              <div id="form8" style="display: none">
+                <div class="container text-center">
+                  <div class="col table-responsive">
+                    <table class="table table-sm table-bordered border-lavender-web align-middle">
+                      <thead class="table table-active">
+                        <!-- Head -->
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">Kode</th>
+                          <th scope="col">Jam</th>
+                          <th scope="col">Body</th>
+                          <th scope="col">Appearance</th>
+                          <th scope="col">Consistency</th>
+                          <th scope="col">Sliceability</th>
+                          <th scope="col">Grating/Melting</th>
+                          <th scope="col">Mouthfeel</th>
+                          <th scope="col">Flavor</th>
+                          <th scope="col">Saltiness</th>
+                          <th scope="col">Cheese Flavor</th>
+                          <th scope="col">General</th>
+                          <th scope="col">Color</th>
+                          <th scope="col">Remarks</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-group-divide">
+                        <tr>
+                          <!-- baris 1 -->
+                          <th scope="row">Begin</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- baris 2 -->
+                        <tr>
+                          <th scope="row">Mid</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- baris 3 -->
+                        <tr>
+                          <th scope="row">End</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- SKU5 -->
+              <div id="form9">
+                <div class="col-12">
+                  <label for="SKU5" class="form-label">SKU 5</label>
+                  <select id="SKU5" name="SKU" class="form-select">
+                    <option>Choose...</option>
+                    <option value="FILLING CHEESE L4">FILLING CHEESE L4</option>
+                    <option value="KRAFT CHEDDAR 48X160 GR">KRAFT CHEDDAR 48X160 GR</option>
+                    <option value="SL EDEN 10 200G">SL EDEN 10 200G</option>
+                    <option value="LOAF L4">LOAF L4</option>
+                    <option value="SL 10 Reg">SL 10 Reg</option>
+                    <option value="AIO 160G L6 Hart">AIO 160G L6 Hart</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Grade 2 -->
+              <div id="form10" style="display: none">
+                <div class="container text-center">
+                  <div class="col table-responsive">
+                    <table class="table table-sm table-bordered border-lavender-web align-middle">
+                      <thead class="table table-active">
+                        <!-- Head -->
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">Kode</th>
+                          <th scope="col">Jam</th>
+                          <th scope="col">Body</th>
+                          <th scope="col">Appearance</th>
+                          <th scope="col">Consistency</th>
+                          <th scope="col">Sliceability</th>
+                          <th scope="col">Grating/Melting</th>
+                          <th scope="col">Mouthfeel</th>
+                          <th scope="col">Flavor</th>
+                          <th scope="col">Saltiness</th>
+                          <th scope="col">Cheese Flavor</th>
+                          <th scope="col">General</th>
+                          <th scope="col">Color</th>
+                          <th scope="col">Remarks</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-group-divide">
+                        <tr>
+                          <!-- baris 1 -->
+                          <th scope="row">Begin</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- baris 2 -->
+                        <tr>
+                          <th scope="row">Mid</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- baris 3 -->
+                        <tr>
+                          <th scope="row">End</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- SKU6 -->
+              <div id="form11">
+                <div class="col-12">
+                  <label for="SKU6" class="form-label">SKU 6</label>
+                  <select id="SKU6" name="SKU" class="form-select">
+                    <option selected disabled value>Choose...</option>
+                    <option value="FILLING CHEESE L4">FILLING CHEESE L4</option>
+                    <option value="KRAFT CHEDDAR 48X160 GR">KRAFT CHEDDAR 48X160 GR</option>
+                    <option value="SL EDEN 10 200G">SL EDEN 10 200G</option>
+                    <option value="LOAF L4">LOAF L4</option>
+                    <option value="SL 10 Reg">SL 10 Reg</option>
+                    <option value="AIO 160G L6 Hart">AIO 160G L6 Hart</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Grade 6 -->
+              <div id="form12" style="display: none">
+                <div class="container text-center">
+                  <div class="col table-responsive">
+                    <table class="table table-sm table-bordered border-lavender-web align-middle">
+                      <thead class="table table-active">
+                        <!-- Head -->
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">Kode</th>
+                          <th scope="col">Jam</th>
+                          <th scope="col">Body</th>
+                          <th scope="col">Appearance</th>
+                          <th scope="col">Consistency</th>
+                          <th scope="col">Sliceability</th>
+                          <th scope="col">Grating/Melting</th>
+                          <th scope="col">Mouthfeel</th>
+                          <th scope="col">Flavor</th>
+                          <th scope="col">Saltiness</th>
+                          <th scope="col">Cheese Flavor</th>
+                          <th scope="col">General</th>
+                          <th scope="col">Color</th>
+                          <th scope="col">Remarks</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-group-divide">
+                        <tr>
+                          <!-- baris 1 -->
+                          <th scope="row">Begin</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- baris 2 -->
+                        <tr>
+                          <th scope="row">Mid</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- baris 3 -->
+                        <tr>
+                          <th scope="row">End</th>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td><input type="number" class="form-control" /></td>
+                          <td>
+                            <div>
+                              <textarea class="form-control"></textarea>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <script>
+                // Dapatkan elemen-elemen kontainer
+                var container1 = document.getElementById("form1");
+                var container2 = document.getElementById("form2");
+                var container3 = document.getElementById("form3");
+                var container4 = document.getElementById("form4");
+                var container5 = document.getElementById("form5");
+                var container6 = document.getElementById("form6");
+                var container7 = document.getElementById("form7");
+                var container8 = document.getElementById("form8");
+                var container9 = document.getElementById("form9");
+                var container10 = document.getElementById("form10");
+                var container11 = document.getElementById("form11");
+                var container12 = document.getElementById("form12");
+                // Tambahkan event listener pada elemen input pertama
+                var SKU = document.getElementById("SKU");
+                var SKU2 = document.getElementById("SKU2");
+                var SKU3 = document.getElementById("SKU3");
+                var SKU4 = document.getElementById("SKU4");
+                var SKU5 = document.getElementById("SKU5");
+                var SKU6 = document.getElementById("SKU6");
+                // Tambahkan event listener pada elemen input pertama
+                SKU.addEventListener("input", function () {
+                  if (SKU.value.trim() !== "") {
+                    container2.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container2);
+                  } else {
+                    container2.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container2);
+                  }
+                });
+                SKU.addEventListener("change", function () {
+                  if (SKU.value === "Choose...") {
+                    container2.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container2);
+                  } else {
+                    container2.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container2);
+                  }
+                });
+                // Tambahkan event listener pada elemen input ketiga
+                SKU2.addEventListener("input", function () {
+                  if (SKU2.value.trim() !== "") {
+                    container4.style.display = "block"; // Tampilkan elemen keempat
+                    makeFormRequired(container4);
+                  } else {
+                    container4.style.display = "none"; // Sembunyikan elemen keempat
+                    makeFormNotRequired(container4);
+                  }
+                });
+                SKU2.addEventListener("change", function () {
+                  if (SKU2.value === "Choose...") {
+                    container4.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container4);
+                  } else {
+                    container4.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container4);
+                  }
+                });
+                // Tambahkan event listener pada elemen input ketiga
+                SKU3.addEventListener("input", function () {
+                  if (SKU3.value.trim() !== "") {
+                    container6.style.display = "block"; // Tampilkan elemen keempat
+                    makeFormRequired(container6);
+                  } else {
+                    container6.style.display = "none"; // Sembunyikan elemen keempat
+                    makeFormNotRequired(container6);
+                  }
+                });
+                SKU3.addEventListener("change", function () {
+                  if (SKU3.value === "Choose...") {
+                    container6.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container6);
+                  } else {
+                    container6.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container6);
+                  }
+                });
+                SKU4.addEventListener("input", function () {
+                  if (SKU4.value.trim() !== "") {
+                    container8.style.display = "block"; // Tampilkan elemen keempat
+                    makeFormRequired(container8);
+                  } else {
+                    container8.style.display = "none"; // Sembunyikan elemen keempat
+                    makeFormNotRequired(container8);
+                  }
+                });
+                SKU4.addEventListener("change", function () {
+                  if (SKU4.value === "Choose...") {
+                    container8.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container8);
+                  } else {
+                    container8.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container8);
+                  }
+                });
+                SKU5.addEventListener("input", function () {
+                  if (SKU5.value.trim() !== "") {
+                    container10.style.display = "block"; // Tampilkan elemen keempat
+                    makeFormRequired(container10);
+                  } else {
+                    container10.style.display = "none"; // Sembunyikan elemen keempat
+                    makeFormNotRequired(container10);
+                  }
+                });
+                SKU5.addEventListener("change", function () {
+                  if (SKU5.value === "Choose...") {
+                    container10.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container10);
+                  } else {
+                    container10.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container10);
+                  }
+                });
+                SKU6.addEventListener("input", function () {
+                  if (SKU6.value.trim() !== "") {
+                    container12.style.display = "block"; // Tampilkan elemen keempat
+                    makeFormRequired(container12);
+                  } else {
+                    container12.style.display = "none"; // Sembunyikan elemen keempat
+                    makeFormNotRequired(container12);
+                  }
+                });
+                SKU6.addEventListener("change", function () {
+                  if (SKU6.value === "Choose...") {
+                    container12.style.display = "none"; // Sembunyikan elemen kedua
+                    makeFormNotRequired(container12);
+                  } else {
+                    container12.style.display = "block"; // Tampilkan elemen kedua
+                    makeFormRequired(container12);
+                  }
+                });
+                function makeFormRequired(container) {
+                  const formElements = container.querySelectorAll("input, select, textarea");
+                  formElements.forEach(function (element) {
+                    element.required = true;
+                  });
+                }
+                function makeFormNotRequired(container) {
+                  const formElements = container.querySelectorAll("input, select, textarea");
+                  formElements.forEach(function (element) {
+                    element.required = false;
+                  });
+                }
+              </script>
+
+              <!-- submit -->
+              <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary btn-danger btn-reset" type="reset">Reset</button>
+                <button class="btn btn-primary btn-submit me-md-2" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+    <footer class="text-white">
+      <p class="text-center p-4">SNACKING MADE RIGHT</p>
+      <link href="https://db.onlinewebfonts.com/c/005e09ad55e3c9e5b992d770e254854f?family=Organika+Serif" rel="stylesheet" />
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="Google Sheet.js"></script>
+  </body>
+</html>
